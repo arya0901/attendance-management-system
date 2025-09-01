@@ -3,6 +3,11 @@ body {
   margin: 0;
   padding: 0;
   background: #f4f6f9;
+
+  /* Make body fill screen and allow main to flex */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -13,26 +18,35 @@ header {
 }
 
 main {
-  max-width: 700px;
-  margin: 30px auto;
+  flex: 1;                         /* take all space under header */
+  display: grid;                   /* enable centering */
+  place-items: center;             /* center content horizontally & vertically */
   padding: 20px;
+}
+
+#login-section {
+  width: 100%;
+  max-width: 400px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 24px;
 }
 
 h2 {
   margin-top: 0;
+  text-align: center;
 }
 
 button {
-  margin: 5px;
+  margin: 5px 0;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   background: #007bff;
   color: white;
+  width: 100%;                     /* full width for form buttons */
 }
 
 button:hover {
@@ -54,3 +68,8 @@ th, td {
 .hidden {
   display: none;
 }
+
+
+  
+
+
