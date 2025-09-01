@@ -8,17 +8,26 @@ function login() {
   }
   currentUser = name;
   localStorage.setItem("currentUser", name);
+
   document.getElementById("user-name").textContent = name;
   document.getElementById("login-section").classList.add("hidden");
   document.getElementById("dashboard").classList.remove("hidden");
+
+  // Switch layout to dashboard mode
+  document.querySelector("main").classList.remove("login-active");
+
   loadLogs();
 }
 
 function logout() {
   currentUser = null;
   localStorage.removeItem("currentUser");
+
   document.getElementById("login-section").classList.remove("hidden");
   document.getElementById("dashboard").classList.add("hidden");
+
+  // Switch back to centered login layout
+  document.querySelector("main").classList.add("login-active");
 }
 
 function clockIn() {
@@ -63,6 +72,10 @@ window.onload = () => {
     document.getElementById("user-name").textContent = savedUser;
     document.getElementById("login-section").classList.add("hidden");
     document.getElementById("dashboard").classList.remove("hidden");
+
+    // Ensure dashboard layout
+    document.querySelector("main").classList.remove("login-active");
+
     loadLogs();
   }
 };
