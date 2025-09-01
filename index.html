@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Attendance Management System</h1>
+  </header>
+
+  <main>
+    <section id="login-section">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="login()">Login</button>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <button onclick="clockIn()">Clock In</button>
+      <button onclick="clockOut()">Clock Out</button>
+      <button onclick="logout()">Logout</button>
+
+      <h3>Attendance Logs</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="logs"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
